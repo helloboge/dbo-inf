@@ -21,6 +21,7 @@ class Informer(nn.Module):
         d_mark=4,
         dropout=0.1,
         c=5,
+        features='MS',
     ):
         super(Informer, self).__init__()
 
@@ -36,6 +37,7 @@ class Informer(nn.Module):
             d_mark=d_mark,
             dropout=dropout,
             c=c,
+            features='MS',
         )
         self.decoder = Decoder(
             d_k=d_k,
@@ -48,6 +50,7 @@ class Informer(nn.Module):
             d_mark=d_mark,
             dropout=dropout,
             c=c,
+            features='MS',
         )
 
         self.projection = nn.Linear(d_model, d_feature, bias=True)
